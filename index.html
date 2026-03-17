@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Promos Guide 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a1a;
+            --card-bg: #12122a;
+            --card-border: #2a2a4a;
+            --text-primary: #e0e0e0;
+            --text-dim: #888;
+            --gold: #ffd700;
+            --pink: #ff6b9d;
+            --blue: #64b5f6;
+            --green: #81c784;
+            --purple: #b388ff;
+            --orange: #ffb74d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(ellipse at 20% 50%, rgba(100, 181, 246, 0.05) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(179, 136, 255, 0.05) 0%, transparent 50%),
+                        linear-gradient(135deg, #0a0a1a 0%, #0f0f25 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, #ffd700, transparent),
+                radial-gradient(2px 2px at 60% 70%, #ff6b9d, transparent),
+                radial-gradient(1px 1px at 50% 50%, #64b5f6, transparent),
+                radial-gradient(1px 1px at 80% 10%, #81c784, transparent),
+                radial-gradient(2px 2px at 10% 90%, #b388ff, transparent),
+                radial-gradient(1px 1px at 30% 60%, #ffb74d, transparent);
+            background-size: 200% 200%;
+            animation: twinkle 20s ease infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Sub-tab Toggle */
+        .sub-tab-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .sub-tab-btn {
+            padding: 8px 16px;
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sub-tab-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .sub-tab-btn.active {
+            background: var(--gold);
+            color: #0a0a1a;
+            border-color: var(--gold);
+        }
+
+        /* Search & Filters */
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-box input:focus {
+            border-color: var(--gold);
+        }
+
+        .promo-filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 14px;
+            background: #1a1a2e;
+            border: 1px solid #2a2a4a;
+            color: var(--text-primary);
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .filter-btn.active {
+            background: var(--gold);
+            color: #0a0a1a;
+            border-color: var(--gold);
+        }
+
+        /* NYU Section */
+        .nyu-section {
+            margin-bottom: 30px;
+        }
+
+        .nyu-header {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            color: var(--purple);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(179, 136, 255, 0.3);
+        }
+
+        /* Promo Cards Grid */
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .promo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .promo-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .promo-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .promo-value {
+            color: var(--green);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .promo-desc {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .promo-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: auto;
+            transition: color 0.2s;
+        }
+
+        .promo-link:hover {
+            color: var(--pink);
+        }
+
+        .category-header {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            color: var(--purple);
+            margin: 30px 0 15px 0;
+        }
+
+        .promo-section {
+            margin-bottom: 10px;
+        }
+
+        /* Cards View */
+        .cards-view {
+            display: none;
+        }
+
+        .cards-view.active {
+            display: block;
+        }
+
+        /* Side by Side Comparison Grid */
+        .side-by-side-container {
+            display: none;
+            overflow-x: auto;
+        }
+
+        .side-by-side-container.active {
+            display: block;
+        }
+
+        .comparison-grid {
+            display: grid;
+            min-width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .grid-cell {
+            padding: 16px;
+            border: 1px solid #2a2a4a;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .grid-cell.label-col {
+            background: #1a1a2e;
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 140px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+        }
+
+        .grid-cell.section-header {
+            background: #1a1a2e;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            grid-column: 1 / -1;
+            padding: 12px 16px;
+        }
+
+        .grid-cell.data {
+            background: #222226;
+        }
+
+        .grid-cell.data:nth-child(odd) {
+            background: #1E1E22;
+        }
+
+        .grid-cell.data ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .grid-cell.data li {
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .grid-cell.data li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+        }
+
+        .grid-header {
+            font-weight: 700;
+            text-align: center;
+            padding: 12px 8px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .grid-header-emoji {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .grid-header-name {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .grid-header-tag {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 20px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .stats-bar {
+                gap: 15px;
+            }
+
+            .promos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 140px repeat(4, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>STUDENT PROMOS GUIDE</h1>
+            <p class="subtitle">100+ deals to claim before you graduate ~ march 2026</p>
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Total Deals</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$15K+</div>
+                    <div class="stat-label">Est. Value</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">NYU Perks</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sub-tab Toggle -->
+        <div class="sub-tab-toggle">
+            <button class="sub-tab-btn active" onclick="switchView(event, 'cards')">Cards</button>
+            <button class="sub-tab-btn" onclick="switchView(event, 'sidebyside')">Side by Side</button>
+        </div>
+
+        <!-- Cards View -->
+        <div id="cards-view" class="cards-view active">
+
+            <div class="search-box">
+                <input type="text" id="promo-search" placeholder="Search deals...">
+            </div>
+
+            <div class="promo-filters">
+                <button class="filter-btn active" onclick="filterPromos('all')">All</button>
+                <button class="filter-btn" onclick="filterPromos('free')">Free</button>
+                <button class="filter-btn" onclick="filterPromos('discounted')">Discounted</button>
+                <button class="filter-btn" onclick="filterPromos('credits')">Credits</button>
+                <button class="filter-btn" onclick="filterPromos('nyu')">NYU-Specific</button>
+            </div>
+
+            <!-- NYU-Specific Perks -->
+            <div class="nyu-section">
+                <div class="nyu-header">NYU EXCLUSIVE</div>
+                <div class="promos-grid" id="nyu-perks-grid"></div>
+            </div>
+
+            <!-- All Categories -->
+            <div id="promos-container"></div>
+        </div>
+
+        <!-- Side by Side View -->
+        <div id="sidebyside-view" class="side-by-side-container">
+            <div class="comparison-grid" style="grid-template-columns: 140px repeat(4, minmax(250px, 1fr));">
+                <!-- Headers -->
+                <div class="grid-cell label-col"></div>
+                <div class="grid-cell grid-header">
+                    <div class="grid-header-emoji">🎓</div>
+                    <div class="grid-header-name">NYU Exclusive</div>
+                    <div class="grid-header-tag">8 Perks</div>
+                </div>
+                <div class="grid-cell grid-header">
+                    <div class="grid-header-emoji">⚙️</div>
+                    <div class="grid-header-name">Dev & Cloud</div>
+                    <div class="grid-header-tag">33 Items</div>
+                </div>
+                <div class="grid-cell grid-header">
+                    <div class="grid-header-emoji">🎨</div>
+                    <div class="grid-header-name">Creative & Productivity</div>
+                    <div class="grid-header-tag">32 Items</div>
+                </div>
+                <div class="grid-cell grid-header">
+                    <div class="grid-header-emoji">🎯</div>
+                    <div class="grid-header-name">Life & Entertainment</div>
+                    <div class="grid-header-tag">29 Items</div>
+                </div>
+
+                <!-- Total Value -->
+                <div class="grid-cell section-header">Total Value</div>
+                <div class="grid-cell label-col">Est. Value</div>
+                <div class="grid-cell data">$2,500+ (dedicated perks)</div>
+                <div class="grid-cell data">$5,000+ (tools & credits)</div>
+                <div class="grid-cell data">$3,500+ (design & learning)</div>
+                <div class="grid-cell data">$4,000+ (entertainment & health)</div>
+
+                <!-- Top Picks -->
+                <div class="grid-cell section-header">Top Picks</div>
+                <div class="grid-cell label-col">Highlighted</div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>NYU IT Software Suite</strong> — MATLAB, Mathematica, SPSS, SAS free on personal devices</li>
+                        <li><strong>NYT + WSJ Digital</strong> — Full subscriptions through NYU Libraries</li>
+                        <li><strong>NYU Museum Gateway</strong> — Free admission to MoMA, Whitney, Guggenheim</li>
+                        <li><strong>NYU Athletics</strong> — Free gym, pool, and group fitness</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>GitHub Student Pack</strong> — 100+ free dev tools, domains, cloud credits in one bundle</li>
+                        <li><strong>AWS Educate</strong> — $100+ cloud computing credits for deploying apps and hosting</li>
+                        <li><strong>Azure for Students</strong> — $100 Azure credit + 25 free services for cloud computing</li>
+                        <li><strong>JetBrains Suite</strong> — Professional IDE suite (IntelliJ, PyCharm, WebStorm) free for students</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>Adobe Creative Cloud</strong> — Full suite of design tools (Photoshop, Illustrator, Premiere) at 60% off</li>
+                        <li><strong>Figma Professional</strong> — Collaborative UI/UX design tool free for students</li>
+                        <li><strong>Canva Premium</strong> — Drag-and-drop design with premium templates and brand kit</li>
+                        <li><strong>Notion Personal</strong> — All-in-one workspace for notes, docs, and project management</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>Spotify Student</strong> — Music streaming with Hulu and Showtime bundled at $5.99/mo</li>
+                        <li><strong>Headspace</strong> — Guided meditation and mindfulness app for mental wellness</li>
+                        <li><strong>Apple Music Student</strong> — 100M+ song library with spatial audio at student pricing</li>
+                        <li><strong>Skillshare Premium</strong> — Online creative classes from illustration to marketing</li>
+                    </ul>
+                </div>
+
+                <!-- Deal Breakdown -->
+                <div class="grid-cell section-header">Deal Breakdown</div>
+                <div class="grid-cell label-col">Free / Discounted / Credit</div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li>Free: 5</li>
+                        <li>Discounted: 3</li>
+                        <li>Credits: 0</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li>Free: 12</li>
+                        <li>Discounted: 15</li>
+                        <li>Credits: 6</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li>Free: 8</li>
+                        <li>Discounted: 18</li>
+                        <li>Credits: 6</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li>Free: 6</li>
+                        <li>Discounted: 16</li>
+                        <li>Credits: 7</li>
+                    </ul>
+                </div>
+
+                <!-- Priority Actions -->
+                <div class="grid-cell section-header" style="color: var(--pink);">Priority Sign-Up (Before Graduation!)</div>
+                <div class="grid-cell label-col">Do First</div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>1.</strong> Verify .edu email on UNiDAYS + SheerID</li>
+                        <li><strong>2.</strong> Activate alumni network access</li>
+                        <li><strong>3.</strong> Book career services appointments</li>
+                        <li><strong>4.</strong> Claim all ID-only discounts</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>1.</strong> GitHub Student Pack — locks in 100+ tools</li>
+                        <li><strong>2.</strong> AWS Educate — $100 credits expire if unclaimed</li>
+                        <li><strong>3.</strong> JetBrains — activate before .edu deactivates</li>
+                        <li><strong>4.</strong> DigitalOcean — $200 credit via GitHub Pack</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>1.</strong> Figma edu — free Pro plan while .edu active</li>
+                        <li><strong>2.</strong> Adobe CC — 60% off locks in annual rate</li>
+                        <li><strong>3.</strong> Notion — upgrade to Personal Pro (free)</li>
+                        <li><strong>4.</strong> Canva — claim Premium before grad</li>
+                    </ul>
+                </div>
+                <div class="grid-cell data">
+                    <ul>
+                        <li><strong>1.</strong> Spotify Student — $5.99 bundle (Hulu + Showtime)</li>
+                        <li><strong>2.</strong> Headspace — free student plan for mental wellness</li>
+                        <li><strong>3.</strong> Apple Music — student rate before .edu expires</li>
+                        <li><strong>4.</strong> Samsung/Dell — hardware edu discounts (one-time)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        student promos guide ~ last updated march 2026
+    </footer>
+
+    <script>
+        // NYU Perks data
+        const nyuPerks = [
+            { name: 'NYU Museum Gateway', value: '~$300/yr, FREE', desc: 'Free admission to NYC museums including MoMA, Whitney, and Guggenheim \u2014 just flash your NYU ID.', link: 'https://www.nyu.edu/life/arts-culture-and-entertainment/free-museum-access.html', category: 'nyu' },
+            { name: 'NYU IT Software Suite', value: '~$1200/yr, FREE', desc: 'Campus-wide licenses for MATLAB, Mathematica, SPSS, and SAS \u2014 install on personal devices.', link: 'https://www.nyu.edu/life/information-technology/computing-support/software/software.html', category: 'nyu' },
+            { name: 'NYT + WSJ Digital', value: '~$700/yr, FREE', desc: 'Full digital subscriptions to The New York Times and Wall Street Journal through NYU Libraries.', link: 'https://wsj.com/NYU', category: 'nyu' },
+            { name: 'NYU Athletics', value: '~$800/yr, FREE', desc: 'Free gym access, group fitness classes, pools, and wellness activities at all NYU athletic facilities.', link: 'https://gonyuathletics.com/sports/recreation', category: 'nyu' },
+            { name: 'NYU ScholasTix', value: 'Discounted', desc: 'Discounted Broadway, concert, and event tickets plus $6 AMC Tuesdays through NYU Box Office.', link: 'https://www.nyu.edu/life/arts-culture-and-entertainment.html', category: 'nyu' },
+            { name: 'NYU Virtual Computer Lab', value: 'FREE', desc: 'Remote access to licensed research software (SAS, SPSS, MATLAB, Mathematica) from any device.', link: 'https://www.nyu.edu/life/information-technology/teaching-and-learning-services/instructional-tools/virtual-computer-lab.html', category: 'nyu' },
+            { name: 'NYU Wellness', value: 'FREE', desc: 'Free counseling, crisis support, and mental health workshops through NYU\'s Student Health Center.', link: 'https://www.nyu.edu/students/health-and-wellness/counseling-services.html', category: 'nyu' },
+            { name: 'NYU Getting Started Promos', value: 'FREE', desc: 'NYU IT\'s curated list of free software, VPN access, cloud storage deals, and more.', link: 'https://www.nyu.edu/life/information-technology/getting-started/getting-started-promos.html', category: 'nyu' }
+        ];
+
+        // Promo categories data
+        const promoCategories = {
+            'Developer Tools': [
+                { name: 'GitHub Student Dev Pack', value: '~$2500+, FREE', desc: 'The mother lode \u2014 100+ free dev tools, cloud credits, domains, and Copilot Pro in one application.', link: 'https://education.github.com/pack', category: 'free' },
+                { name: 'JetBrains All Products', value: '~$600/yr, FREE', desc: 'Every professional IDE (PyCharm, IntelliJ, WebStorm, DataGrip, etc.) free while you\'re enrolled.', link: 'https://www.jetbrains.com/community/education/#students', category: 'free' },
+                { name: 'GitHub Copilot Pro', value: '~$240/yr, FREE', desc: 'AI pair programmer that autocompletes code in VS Code, JetBrains, and other IDEs.', link: 'https://github.com/features/copilot', category: 'free' },
+                { name: 'GitKraken Pro', value: 'FREE', desc: 'Visual Git client with merge conflict editor, interactive rebase, and GitLens for VS Code.', link: 'https://www.gitkraken.com/github-student-developer-pack', category: 'free' },
+                { name: 'Tower Pro', value: 'FREE', desc: 'Premium Git GUI client for Mac and Windows with an intuitive drag-and-drop interface.', link: 'https://www.git-tower.com/students', category: 'free' },
+                { name: 'Visual Studio Community', value: 'FREE', desc: 'Microsoft\'s full-featured IDE for C#, C++, JavaScript, and Python development.', link: 'https://visualstudio.microsoft.com/vs/community/', category: 'free' },
+                { name: 'Bootstrap Studio', value: 'FREE', desc: 'Drag-and-drop website builder that generates clean, responsive Bootstrap code.', link: 'https://bootstrapstudio.io/pages/student-license', category: 'free' },
+                { name: 'Xojo Pro', value: 'FREE', desc: 'Cross-platform app development tool for building native desktop, web, and mobile apps.', link: 'https://www.xojo.com/edu/', category: 'free' },
+                { name: 'Polypane', value: 'FREE 1yr', desc: 'Developer browser that shows your site at multiple screen sizes simultaneously for responsive testing.', link: 'https://polypane.app/github-students/', category: 'free' },
+                { name: 'PopSQL Pro', value: 'FREE', desc: 'Collaborative SQL editor with shared queries, version history, and data visualizations.', link: 'https://popsql.com/pricing', category: 'free' },
+                { name: 'Termius Premium', value: 'FREE', desc: 'Cross-platform SSH client with encrypted vault, SFTP, and port forwarding.', link: 'https://termius.com/education', category: 'free' },
+                { name: 'Working Copy', value: 'FREE', desc: 'Full-featured Git client for iPhone and iPad with push, pull, and merge capabilities.', link: 'https://workingcopy.app/education/', category: 'free' },
+                { name: 'Sentry', value: 'FREE', desc: 'Real-time error tracking and performance monitoring for web and mobile applications.', link: 'https://sentry.io/for/education/', category: 'free' },
+                { name: 'DeepSource', value: 'FREE', desc: 'Automated code review tool that catches bugs, anti-patterns, and security issues in your repos.', link: 'https://deepsource.com/', category: 'free' },
+                { name: 'New Relic', value: 'FREE', desc: 'Full-stack observability platform for monitoring application performance ($300/mo value).', link: 'https://newrelic.com/social-impact/students', category: 'free' }
+            ],
+            'Cloud & Hosting': [
+                { name: 'DigitalOcean', value: '$200 credit', desc: 'Cloud infrastructure platform for deploying apps, databases, and Kubernetes clusters.', link: 'https://www.digitalocean.com/github-students', category: 'credits' },
+                { name: 'Microsoft Azure', value: '$100 credit', desc: 'Microsoft\'s cloud platform with VMs, databases, AI services, and DevOps tools.', link: 'https://azure.microsoft.com/en-us/free/students', category: 'credits' },
+                { name: 'AWS Educate', value: 'FREE', desc: 'Amazon\'s cloud learning platform with hands-on labs, training paths, and free compute resources.', link: 'https://aws.amazon.com/education/awseducate/', category: 'free' },
+                { name: 'Google Cloud', value: 'FREE trial', desc: 'Google\'s cloud platform with compute, storage, ML/AI services, and BigQuery analytics.', link: 'https://cloud.google.com/edu', category: 'free' },
+                { name: 'Heroku', value: 'FREE 2yr', desc: 'Platform-as-a-service for quick app deployment \u2014 push code and it handles the infrastructure.', link: 'https://www.heroku.com/github-students', category: 'free' },
+                { name: 'Qoddi', value: '$250 credit', desc: 'Managed cloud hosting optimized for deploying web applications and APIs.', link: 'https://qoddi.com/', category: 'credits' },
+                { name: 'Netlify / Vercel', value: 'FREE tier', desc: 'Free hosting for static sites and serverless functions with automatic deploys from Git.', link: 'https://www.netlify.com/', category: 'free' },
+                { name: 'Northflank', value: 'FREE', desc: 'Cloud platform for deploying services, cron jobs, and databases with a generous free tier.', link: 'https://northflank.com/pricing', category: 'free' },
+                { name: 'InterServer', value: 'FREE 1yr', desc: 'Traditional web hosting with cPanel, unlimited storage, and free SSL certificate.', link: 'https://www.interserver.net/webhosting/student-webhosting.html', category: 'free' }
+            ],
+            'Design & Creative': [
+                { name: 'Figma Professional', value: '~$150/yr, FREE', desc: 'Collaborative UI/UX design tool with real-time multiplayer editing and dev handoff mode.', link: 'https://www.figma.com/education/', category: 'free' },
+                { name: 'Canva Pro / Education', value: '~$150/yr, FREE', desc: 'All-in-one graphic design platform with premium templates, Brand Kit, and AI Magic tools.', link: 'https://www.canva.com/education/', category: 'free' },
+                { name: 'Adobe Creative Cloud', value: '~60% OFF', desc: 'The industry standard \u2014 Photoshop, Illustrator, Premiere Pro, After Effects, and 20+ creative apps.', link: 'https://www.adobe.com/creativecloud/buy/students.html', category: 'discounted' },
+                { name: 'Sketch', value: 'FREE', desc: 'Professional vector design tool for Mac, popular for UI/UX design and prototyping.', link: 'https://www.sketch.com/education/', category: 'free' },
+                { name: 'Autodesk Education', value: 'FREE', desc: 'Professional CAD/3D software suite \u2014 AutoCAD, Maya, 3DS Max, Fusion 360 \u2014 free for students.', link: 'https://www.autodesk.com/education/edu-software/overview', category: 'free' },
+                { name: 'Icons8', value: 'FREE 3mo', desc: 'Library of icons, illustrations, photos, and music with consistent style across assets.', link: 'https://icons8.com/github-students', category: 'free' },
+                { name: 'Iconscout', value: 'FREE 1yr', desc: 'Curated marketplace of premium icons, illustrations, and 3D assets for design projects.', link: 'https://iconscout.com/', category: 'free' },
+                { name: 'Beautiful.ai Pro', value: 'FREE 1yr', desc: 'AI-powered presentation builder that automatically formats slides as you add content.', link: 'https://www.beautiful.ai/education', category: 'free' },
+                { name: 'Shapr3D', value: 'FREE 1yr', desc: 'Professional 3D CAD modeling tool that runs on iPad and desktop with Apple Pencil support.', link: 'https://www.shapr3d.com/education', category: 'free' },
+                { name: 'Solid Edge', value: 'FREE', desc: 'Siemens\' professional 3D CAD software for mechanical and product design.', link: 'https://solidedge.siemens.com/en/solutions/users/students/', category: 'free' },
+                { name: 'Framer', value: '50% OFF', desc: 'Interactive prototyping and website design tool with code-level control and animations.', link: 'https://www.framer.com/pricing/', category: 'discounted' }
+            ],
+            'Productivity': [
+                { name: 'Notion Plus', value: '~$120/yr, FREE', desc: 'All-in-one workspace for notes, databases, wikis, project management, and AI-powered writing.', link: 'https://www.notion.so/product/notion-for-education', category: 'free' },
+                { name: 'Microsoft 365 Education', value: '~$400/yr, FREE', desc: 'Word, Excel, PowerPoint, OneNote, Teams, and 1TB OneDrive storage \u2014 the full Office suite.', link: 'https://www.microsoft.com/en-us/education/products/office', category: 'free' },
+                { name: 'Google Workspace', value: 'FREE', desc: 'Google\'s productivity suite \u2014 Drive, Docs, Sheets, Slides, Meet, and more.', link: 'https://edu.google.com/workspace-for-education/editions/overview/', category: 'free' },
+                { name: 'Miro', value: 'FREE 2yr', desc: 'Digital whiteboard for brainstorming, mind mapping, diagramming, and visual collaboration.', link: 'https://miro.com/education/', category: 'free' },
+                { name: 'Lucidchart Education', value: 'FREE', desc: 'Flowchart and diagram tool for wireframes, org charts, ERDs, and process maps.', link: 'https://www.lucidchart.com/pages/usecase/education', category: 'free' },
+                { name: 'Loom Pro', value: 'FREE', desc: 'Screen recording and video messaging tool \u2014 record your screen and share with a link.', link: 'https://www.loom.com/education', category: 'free' },
+                { name: 'Craft', value: 'FREE', desc: 'Beautiful document and note-taking app for Mac/iOS with real-time collaboration.', link: 'https://www.craft.do/education', category: 'free' },
+                { name: 'Basecamp', value: 'FREE', desc: 'Project management platform with to-dos, message boards, schedules, and file storage.', link: 'https://basecamp.com/discounts', category: 'free' },
+                { name: 'Taskade', value: '50% OFF', desc: 'AI-powered productivity workspace with tasks, notes, mind maps, and team chat.', link: 'https://www.taskade.com/pricing', category: 'discounted' },
+                { name: 'Evernote', value: '50% OFF', desc: 'Note-taking and organization app with web clipping, document scanning, and search.', link: 'https://evernote.com/student-discount', category: 'discounted' },
+                { name: 'Webflow CMS', value: 'FREE 1yr', desc: 'Visual website builder with a full CMS \u2014 design and publish without writing code.', link: 'https://webflow.com/for/classroom', category: 'free' },
+                { name: 'Grammarly Education', value: 'FREE', desc: 'AI writing assistant that checks grammar, tone, clarity, and plagiarism in real-time.', link: 'https://www.grammarly.com/edu', category: 'free' }
+            ],
+            'Streaming': [
+                { name: 'Spotify Premium Student', value: '~50% OFF, $6.99/mo', desc: 'Ad-free music streaming with offline downloads, podcasts, and Hulu basic included.', link: 'https://www.spotify.com/us/student/', category: 'discounted' },
+                { name: 'Apple Music Student', value: '~50% OFF, $5.99/mo', desc: 'Apple\'s music streaming service with spatial audio \u2014 includes free Apple TV+ subscription.', link: 'https://music.apple.com/subscribe/student', category: 'discounted' },
+                { name: 'YouTube Premium Student', value: '~35% OFF, $7.99/mo', desc: 'Ad-free YouTube and YouTube Music with background play and offline downloads.', link: 'https://www.youtube.com/premium/student', category: 'discounted' },
+                { name: 'Amazon Prime Student', value: '50% OFF', desc: 'Free 2-day shipping, Prime Video, Prime Reading, and unlimited photo storage.', link: 'https://www.amazon.com/amazonprime?channel=PSTUDENT', category: 'discounted' },
+                { name: 'Peacock Student', value: 'Discounted', desc: 'NBCUniversal\'s streaming service with live sports, movies, and original shows.', link: 'https://www.studentbeans.com/student-discount/us/peacock', category: 'discounted' },
+                { name: 'Paramount+ Student', value: '25% OFF', desc: 'ViacomCBS streaming with Star Trek, Yellowstone, live NFL/CBS Sports, and originals.', link: 'https://www.studentbeans.com/student-discount/us/paramount-plus', category: 'discounted' }
+            ],
+            'Data Science': [
+                { name: 'Tableau Desktop', value: '~$2000/yr, FREE 1yr', desc: 'Industry-leading data visualization tool for creating interactive dashboards and reports.', link: 'https://www.tableau.com/academic/students', category: 'free' },
+                { name: 'MongoDB Atlas', value: '$200 credit', desc: 'Cloud-hosted NoSQL database platform with automatic scaling and built-in analytics.', link: 'https://www.mongodb.com/students', category: 'credits' },
+                { name: 'SAS University', value: 'FREE', desc: 'Statistical analysis software used in healthcare, pharma, and academic research.', link: 'https://www.sas.com/en_us/software/on-demand-for-academics.html', category: 'free' },
+                { name: 'MATLAB Full Suite', value: 'NYU license', desc: 'High-level programming language for numerical computing, data analysis, and algorithm development.', link: 'https://www.nyu.edu/life/information-technology/computing-support/software/software.html', category: 'nyu' },
+                { name: 'CARTO', value: 'FREE 2yr', desc: 'Geospatial analytics platform for building location-based visualizations and spatial analysis.', link: 'https://carto.com/community/education', category: 'free' },
+                { name: 'Datadog Pro', value: 'FREE 2yr', desc: 'Infrastructure monitoring platform for tracking servers, databases, and application performance.', link: 'https://www.datadoghq.com/partner/github-student-developer-pack/', category: 'free' },
+                { name: 'Exploratory', value: 'FREE', desc: 'No-code data science platform for data wrangling, visualization, and statistical analysis.', link: 'https://exploratory.io/plan', category: 'free' },
+                { name: 'AnyChart', value: 'FREE', desc: 'JavaScript charting library for creating interactive, embeddable data visualizations.', link: 'https://www.anychart.com/buy/non-commercial-license/', category: 'free' }
+            ],
+            'Learning Platforms': [
+                { name: 'LinkedIn Learning', value: 'Check NYU', desc: 'Video course platform with 16,000+ courses on business, tech, and creative skills.', link: 'https://library.nyu.edu/', category: 'nyu' },
+                { name: 'Frontend Masters', value: 'FREE 6mo', desc: 'Expert-led video courses on JavaScript, React, Node.js, and modern web development.', link: 'https://frontendmasters.com/welcome/github-student-developers/', category: 'free' },
+                { name: 'Educative.io', value: 'FREE 6mo', desc: 'Interactive text-based coding courses \u2014 learn by doing with in-browser code environments.', link: 'https://www.educative.io/github-students', category: 'free' },
+                { name: 'DataCamp', value: 'FREE 3mo', desc: 'Interactive data science courses for Python, R, SQL, and machine learning.', link: 'https://www.datacamp.com/github-students', category: 'free' },
+                { name: 'Interview Cake', value: 'FREE 3wk', desc: 'Coding interview prep with step-by-step problem breakdowns and practice challenges.', link: 'https://www.interviewcake.com/github-students', category: 'free' },
+                { name: 'ACM Digital Library', value: '~80% OFF, $42/yr', desc: 'World\'s largest computing research library with journals, conference papers, and magazines.', link: 'https://www.acm.org/membership/student', category: 'discounted' },
+                { name: 'GO RAILS', value: 'FREE 12mo', desc: 'Video tutorials and guides for learning Ruby on Rails web development.', link: 'https://gorails.com/github-students', category: 'free' },
+                { name: 'MongoDB University', value: 'FREE', desc: 'Free official MongoDB courses and certifications for database development and administration.', link: 'https://learn.mongodb.com/', category: 'free' },
+                { name: 'AWS / Azure Certs', value: 'FREE prep', desc: 'Free cloud certification training materials, practice exams, and learning paths.', link: 'https://aws.amazon.com/education/awseducate/', category: 'free' }
+            ],
+            'Domains, Security & DevOps': [
+                { name: 'Namecheap (.me domain)', value: 'FREE 1yr', desc: 'Domain registrar offering a free .me personal domain \u2014 perfect for your portfolio site.', link: 'https://nc.me/', category: 'free' },
+                { name: '.tech Domain', value: '$0.99/yr', desc: 'A .tech TLD for your personal brand or project site at $0.99 for the first year.', link: 'https://get.tech/github-student-developer-pack', category: 'discounted' },
+                { name: 'name.com', value: 'FREE', desc: 'Domain registration with free WHOIS privacy and DNS management.', link: 'https://www.name.com/partner/github-students', category: 'free' },
+                { name: '1Password', value: 'FREE 6mo', desc: 'Password manager with encrypted vault, secure sharing, and watchtower breach alerts.', link: 'https://1password.com/github-students', category: 'free' },
+                { name: 'Dashlane Premium', value: 'FREE 1yr', desc: 'Password manager with dark web monitoring, VPN, and automatic password changing.', link: 'https://www.dashlane.com/students', category: 'free' },
+                { name: 'Malwarebytes', value: '50% OFF', desc: 'Antivirus and anti-malware protection for real-time threat detection and removal.', link: 'https://www.malwarebytes.com/student-discount', category: 'discounted' },
+                { name: 'Shodan', value: 'FREE upgrade', desc: 'Search engine for internet-connected devices \u2014 used for security research and IoT discovery.', link: 'https://www.shodan.io/', category: 'free' },
+                { name: 'BrowserStack', value: 'FREE 1yr', desc: 'Cross-browser testing platform to test websites on real devices and browsers remotely.', link: 'https://www.browserstack.com/github-students', category: 'free' },
+                { name: 'Stripe Waived Fees', value: 'Waived fees', desc: 'Payment processing platform for accepting online payments \u2014 first $1K in revenue fee-free.', link: 'https://stripe.com/docs/atlas', category: 'free' }
+            ],
+            'Game Dev': [
+                { name: 'Unity Student', value: 'FREE', desc: 'Industry-standard game engine for 2D/3D games, AR/VR apps, and interactive simulations.', link: 'https://unity.com/products/unity-student', category: 'free' },
+                { name: 'Unreal Engine', value: 'FREE', desc: 'Epic Games\' AAA game engine powering Fortnite \u2014 free for students and personal use.', link: 'https://www.unrealengine.com/en-US/download', category: 'free' },
+                { name: 'Astah Professional', value: 'FREE 1yr', desc: 'UML modeling tool for creating class diagrams, sequence diagrams, and software architecture.', link: 'https://astah.net/products/free-student-license/', category: 'free' },
+                { name: 'Axure RP Pro', value: 'FREE', desc: 'Advanced wireframing and prototyping tool for designing complex interactive applications.', link: 'https://www.axure.com/edu', category: 'free' }
+            ],
+            'Tech & Hardware': [
+                { name: 'Apple Education Store', value: 'Discounted', desc: 'Apple\'s student pricing on MacBooks, iPads, and accessories \u2014 plus free gift cards with purchase.', link: 'https://www.apple.com/us-edu/store', category: 'discounted' },
+                { name: 'Samsung Education', value: 'up to 30% OFF', desc: 'Samsung\'s student portal with up to 30% off Galaxy laptops, tablets, and phones.', link: 'https://www.samsung.com/us/shop/offer-program/education/', category: 'discounted' },
+                { name: 'Dell University', value: 'Discounted', desc: 'Dell\'s student-exclusive pricing on Inspiron, XPS, and Latitude laptops and desktops.', link: 'https://www.dell.com/en-us/lp/students', category: 'discounted' },
+                { name: 'Lenovo Education', value: 'up to 20% OFF', desc: 'Lenovo\'s student discounts on ThinkPad, IdeaPad, Yoga, and Legion laptops.', link: 'https://www.lenovo.com/us/en/d/deals/students-and-teachers/', category: 'discounted' },
+                { name: 'HP Education Store', value: 'up to 40% OFF', desc: 'HP\'s education portal with up to 40% off laptops, monitors, and accessories.', link: 'https://www.hp.com/us-en/shop/cv/hp-education', category: 'discounted' },
+                { name: 'Best Buy Student Hub', value: 'up to $500 OFF', desc: 'Best Buy\'s student deals portal with exclusive pricing on tech, headphones, and storage.', link: 'https://www.bestbuy.com/site/misc/back-to-school/pcmcat334100050000.c', category: 'discounted' },
+                { name: 'Adafruit IO+', value: 'FREE 1yr', desc: 'IoT platform for building connected hardware projects with sensors and microcontrollers.', link: 'https://www.adafruit.com/github-students', category: 'free' }
+            ],
+            'Shopping & Lifestyle': [
+                { name: 'UNiDAYS', value: 'FREE platform', desc: 'Student discount aggregator with verified deals from 100s of brands across fashion, tech, and food.', link: 'https://www.myunidays.com/', category: 'free' },
+                { name: 'Student Beans', value: 'FREE platform', desc: 'Global student discount platform with exclusive codes for major brands and streaming services.', link: 'https://www.studentbeans.com/us', category: 'free' },
+                { name: 'Nike', value: '10% OFF', desc: 'Athletic footwear and apparel brand \u2014 student discount via UNiDAYS verification.', link: 'https://www.myunidays.com/US/en-US/partners/nike/access/online', category: 'discounted' },
+                { name: 'Adidas', value: '15-30% OFF', desc: 'Sports and lifestyle brand with Originals, performance gear, and collaboration lines.', link: 'https://www.myunidays.com/US/en-US/partners/adidas/access/online', category: 'discounted' },
+                { name: 'American Eagle / Aerie', value: '20% OFF', desc: 'Casual clothing and intimates brand popular with college students.', link: 'https://www.studentbeans.com/student-discount/us/american-eagle', category: 'discounted' },
+                { name: 'Levi\'s', value: '15% OFF', desc: 'Iconic denim brand \u2014 jeans, jackets, and casual wear with student pricing.', link: 'https://www.myunidays.com/US/en-US/partners/levis/access/online', category: 'discounted' },
+                { name: 'HelloFresh', value: '55% OFF 1st', desc: 'Meal kit delivery service with pre-portioned ingredients and step-by-step recipes.', link: 'https://www.hellofresh.com/pages/student-discount', category: 'discounted' },
+                { name: 'Fast Food', value: '~10% OFF, varies', desc: 'Many chains (Chipotle, Chick-fil-A, Dunkin\', Subway) offer student discounts \u2014 just ask at the register.', link: 'https://www.dealnews.com/features/discounts/student-discounts/', category: 'discounted' },
+                { name: 'Amtrak', value: '15% OFF', desc: 'National passenger railroad \u2014 student/young adult discount on Northeast Corridor and long-distance routes.', link: 'https://www.amtrak.com/deals-discounts/everyday-discounts.html', category: 'discounted' },
+                { name: 'United Airlines', value: '5% OFF', desc: 'Major US airline with young adult (18-23) discounts on domestic and international flights.', link: 'https://www.united.com/en/us/fly/travel/young-adults.html', category: 'discounted' },
+                { name: 'Too Good To Go', value: 'Deals', desc: 'App for buying surplus food from local restaurants at deep discounts to reduce waste.', link: 'https://www.toogoodtogo.com/en-us', category: 'discounted' },
+                { name: 'Gymshark', value: 'up to 20% OFF', desc: 'Fitness apparel and accessories brand popular for gym and activewear.', link: 'https://www.myunidays.com/US/en-US/partners/gymshark/access/online', category: 'discounted' }
+            ],
+            'Health & Wellness': [
+                { name: 'Headspace Student', value: 'up to 85% OFF', desc: 'Guided meditation and mindfulness app with sleep sounds, focus music, and stress exercises.', link: 'https://www.headspace.com/studentplan', category: 'discounted' },
+                { name: 'NYU Wellness', value: 'FREE', desc: 'Free counseling, crisis support, and mental health workshops through NYU\'s Student Health Center.', link: 'https://www.nyu.edu/students/health-and-wellness/counseling-services.html', category: 'nyu' },
+                { name: 'NYU Gym', value: 'FREE', desc: 'Free access to Palladium Athletic Facility, 404 Fitness, and other NYU gyms with group classes.', link: 'https://gonyuathletics.com/sports/recreation', category: 'nyu' },
+                { name: 'FairFares NYC', value: '50% OFF', desc: 'NYC program providing half-price MetroCards for qualifying low-income residents.', link: 'https://www.nyc.gov/site/fairfares/index.page', category: 'discounted' }
+            ]
+        };
+
+        // Populate promos
+        function populatePromos() {
+            const nyu = document.getElementById('nyu-perks-grid');
+            nyu.innerHTML = '';
+            nyuPerks.forEach(perk => {
+                const card = document.createElement('div');
+                card.className = 'promo-card';
+                card.innerHTML = `
+                    <div class="promo-name">${perk.name}</div>
+                    <div class="promo-value">${perk.value}</div>
+                    <div class="promo-desc">${perk.desc}</div>
+                    <a href="${perk.link}" target="_blank" class="promo-link">Visit \u2192</a>
+                `;
+                nyu.appendChild(card);
+            });
+
+            const container = document.getElementById('promos-container');
+            container.innerHTML = '';
+            for (const [category, items] of Object.entries(promoCategories)) {
+                const section = document.createElement('div');
+                section.className = 'promo-section';
+                section.innerHTML = `<h3 class="category-header">${category}</h3>`;
+
+                const grid = document.createElement('div');
+                grid.className = 'promos-grid';
+
+                items.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'promo-card';
+                    card.dataset.category = item.category;
+                    card.dataset.search = (item.name + ' ' + item.value + ' ' + item.desc).toLowerCase();
+                    card.innerHTML = `
+                        <div class="promo-name">${item.name}</div>
+                        <div class="promo-value">${item.value}</div>
+                        <div class="promo-desc">${item.desc}</div>
+                        <a href="${item.link}" target="_blank" class="promo-link">Visit \u2192</a>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                section.appendChild(grid);
+                container.appendChild(section);
+            }
+        }
+
+        // Filter
+        function filterPromos(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.promo-card');
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = card.dataset.category === type ? 'flex' : 'none';
+                }
+            });
+        }
+
+        // Search
+        document.getElementById('promo-search').addEventListener('input', function(e) {
+            const search = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.promo-card');
+            cards.forEach(card => {
+                const matches = card.dataset.search && card.dataset.search.includes(search);
+                card.style.display = (search === '' || matches) ? 'flex' : 'none';
+            });
+        });
+
+        // View switching
+        function switchView(event, viewType) {
+            const buttons = event.target.parentElement.querySelectorAll('.sub-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cardsView = document.getElementById('cards-view');
+            const sideBySideView = document.getElementById('sidebyside-view');
+
+            if (viewType === 'cards') {
+                cardsView.classList.add('active');
+                sideBySideView.classList.remove('active');
+            } else {
+                cardsView.classList.remove('active');
+                sideBySideView.classList.add('active');
+            }
+        }
+
+        // Initialize
+        populatePromos();
+    </script>
+</body>
+</html>
